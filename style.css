@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    min-height: 100dvh;
+    position: relative;
+    padding: 0 100px;
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: #333;
+    z-index: -2;
+}
+.container::after{
+    content: "Healthy";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 18vw;
+    z-index: -2;
+    font-weight: 700;
+    color: #000;
+    opacity: 0.05;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+header .logo{
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    color: #333;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+header .logo span{
+    color: #78ff00;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+}
+
+header ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+
+header ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    padding: 4px 10px;
+}
+
+header ul li:nth-child(3) a,
+header ul li:nth-child(4) a{
+    color: #fff;
+}
+
+header ul li a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #78ff00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+header ul li a:hover::before,
+header ul li a.active::before{
+    width: 40px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 13px; /*crearting an problem in layout */
+}
+
+.content .bannerText{
+    position: relative;
+    max-width: 500px;
+    margin-right: 50px;
+}
+/*----------------------------------------imp trick for carousels*/
+.content .bannerText div{
+    display: none;
+}
+
+.content .bannerText div.active{
+    display: initial;
+}
+/*------------------------------------------------------------*/
+
+.content .bannerText h2{
+    font-size: 54px;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: #333;
+}
+
+.content .bannerText p{
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8em;
+    margin: 20px 0;
+}
+
+.content .bannerText a{
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.content .bannerText a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: #78ff00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+
+
+.content .bannerText a:hover::before{
+    width: 100%;
+}
+
+
+.content .bannerImg{
+    position: relative;
+    width: 440px;
+    height: 440px;
+    transform: translate(-8.0%);
+    /* border-radius: 50%; */
+    /* background: #000; */
+}
+/*-----------------------------imp trick for caousel*/
+.content .bannerImg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ;
+    opacity: 0;
+    border-radius: 50%;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+.content .bannerImg img.active{
+    opacity: 1;
+}
+/* ................................................ */
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0; 
+    /* creating an problem in layout */
+}
+
+
+
+.icons .sci,
+.icons .controls{
+    position: relative;
+    display: flex;
+    /* border:3px solid; */
+}
+
+
+
+/* d*/
+.icons .controls{
+    right:16.6%;
+}
+
+/* d*/
+#left-arrow{
+    color: #333;
+}
+/* d*/
+#right-arrow{
+    color: #ffffff;
+}
+
+
+
+.icons .sci li{
+    list-style: none;
+    margin-right: 30px;
+}
+
+.icons .sci li a i{
+    display: inline-block;
+    max-height:  24px;
+    transition: 0.2s ease-in-out;
+    color: #333;
+}
+
+.icons .sci li a:hover i{
+    transform: translateY(-10px);
+    /* scale provides better ux here*/
+   
+}
+
+.icons .controls li {
+    list-style: none;
+    margin-left: 20px;
+    cursor: pointer;
+    /* filter: invert(1); */
+    transition: 0.5s ease-in-out;
+}
+
+.icons .controls li:hover{
+    opacity: 0.5;
+}
+.menuIcon{
+    display: none;
+}
+
+.content .bannerText h2 span{
+    display: none;
+}
+
+
+@media(max-width:1067px){
+    .container{
+        padding: 20px 50px;
+    }
+
+    .container::before{
+        /* display: none; */
+        top: 0;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%);
+        height: 40%;
+        width: 250px;
+    }
+    header{
+        padding: 0;
+    }
+
+    .icons .controls li{
+        color: red; 
+        /* do something about it, not working can not see the arrows*/
+    }
+    .content .bannerText h2{
+        font-size: 30px;
+        text-align: center;
+    }
+    .content .bannerText p{
+        font-size: 16px;
+        padding-left: 50px;
+        /* text-align: center; */
+    }
+    .content .bannerText a{
+        font-size: 15px;
+        padding: 10px;
+    }
+    .content{
+        margin-top: 0;
+        flex-direction: column-reverse;
+    }
+
+    .content .bannerImg{
+        width: 340px;
+        height: 340px; 
+        /* height: 40dvh; */
+        /*this height and width creating an problem */
+        margin: 20px 0;
+        margin-right: -50.9px;
+    }
+
+    .content .bannerText{
+        /* max-width: 100%; */
+        /* padding-right: 0; */
+    }
+
+    header ul{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100dvh;
+        background: #fff;
+        /* display: initial; */
+        z-index: 10000000;
+        padding: 100px 0;
+    }
+    header.active ul{
+        display: initial;
+    }
+    header ul li{
+        padding: 20px;
+        text-align: center;
+    }
+
+    header ul li a{
+        color: #333 !important;
+        font-size: 36px;
+    }
+
+    header ul li a:hover::before,
+    header ul li a.active::before{
+        width: 100%;
+    }
+    .menuIcon{
+        display: initial;
+        position: fixed;
+        right: 50px;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1000000000;
+    }
+
+
+    #right-arrow{
+        color: #333;
+    }
+
+    .bar-sign,.x-mark{
+        display: none;
+    }
+    header.active span .x-mark{
+        display: initial;
+    }
+    header:not(.active) span .bar-sign{
+        display: initial;
+    }
+
+}
+
+@media (min-width:1129px) and (max-width:1194px){
+    .content .bannerImg{
+        width: 380px;
+        height: 380px; 
+        margin: 15px 0;
+        transform: translate(-14.5%);
+        /* margin-right: -50.9px; */
+    }
+
+    .content .bannerText h2{
+        font-size: 40px;
+    }
+    .content .bannerText p{
+        font-size: 17px;
+    }
+
+    .content .bannerText a{
+        font-size: 16px;
+        padding: 14px;
+    }
+}
+
+
+@media (min-width:1098px) and (max-width:1128px){
+    .content .bannerImg{
+        width: 300px;
+        height: 300px; 
+        margin: 15px 0;
+        transform: translate(-35.4%);
+    }
+
+    .content .bannerText h2{
+        font-size: 35px;
+    }
+    .content .bannerText p{
+        font-size: 16.5px;
+    }
+    .content .bannerText a{
+        font-size: 13px;
+        padding: 13px;
+    }
+}
+@media (min-width:1068px) and (max-width:1097px){
+    .content .bannerImg{
+        width: 240px;
+        height: 240px; 
+        margin: 15px 0;
+        transform: translate(-55.4%);
+    }
+    .content .bannerText h2{
+        font-size: 30px;
+    }
+    .content .bannerText p{
+        font-size: 15px;
+    }
+    .content .bannerText a{
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+@media (max-width:767px){
+    /* .container{
+        padding: 20px 30px;
+    } */
+
+    .menuIcon{
+        right: 30px;
+    }
+    .icons .controls li a i{
+        /* reduce size of the arrows*/
+    }
+
+   
+
+}
+
+@media(max-width:574px){
+    header .logo{
+        color: #78ff00;
+    }
+    
+    header .logo span{
+        color: gray;
+    }
+}
+
+@media(max-width:480px){
+    .container{
+        padding: 20px 50px 0px 50px;
+    }
+    .container::before{
+        /* display: none; */
+        top: 0;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%);
+        height: 40%;
+        width: 200px;
+    }
+
+    .content .bannerImg{
+        width: 300px;
+        height: 300px; 
+        /* height: 40dvh; */
+        /*this height and width creating an problem */
+        margin: 15px 0;
+        margin-right: -50.9px;
+    }
+
+    .content .bannerText p{
+        font-size: 16px;
+        padding: 0; 
+        /* border: 3px solid springgreen; */
+        /* margin-right: 0; */
+        /* padding-right: 0; */
+        /* text-align: center; */
+        display: none;
+
+    }
+    .content .bannerText a{
+        margin-top: 50px;
+    }
+
+    .container::after{
+        bottom: 8%;
+    }
+
+    .content .bannerText h2 span{
+        display: initial;
+    }
+    .content .bannerText h2.description+p{
+        display: block;
+        margin-bottom: -50px;
+        /* color: red; */
+    }
+}
+
+@media(max-width:374px){
+
+    .container::before{
+        /* display: none; */
+        top: 0;
+        right: 50%;
+        left: 52%;
+        transform: translate(-50%);
+        height: 30%;
+        width: 150px;
+    }
+    .content .bannerImg{
+        width: 200px;
+        height: 200px; 
+        /* height: 40dvh; */
+        /*this height and width creating an problem */
+        margin: 15px 0;
+        margin-right: -50.9px;
+    }
+    
+
+    .content .bannerText p{
+        font-size: 14px;
+        /* padding-left: 40px; */
+        /* margin-right: 0; */
+        /* padding-right: 0; */
+        /* text-align: center; */
+        /* display: none; */
+    }
+
+    .content .bannerText h2{
+        font-size: 20px;
+    }
+    #left-arrow{
+        font-size: 12px;
+    }
+    #right-arrow{
+        font-size: 12px;
+    }
+}

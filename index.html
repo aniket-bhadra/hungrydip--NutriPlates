@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hungrydip</title>
+    <script
+      src="https://kit.fontawesome.com/f1e02b94da.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header id="navbar">
+        <a href="#" class="logo">hungry<span>dip</span> </a>
+
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <span class="menuIcon" onclick="menuToggle();"
+          ><i class="fa-solid fa-bars-staggered fa-2x bar-sign"></i>
+          <i class="fa-solid fa-xmark fa-2x x-mark"></i>
+        </span>
+      </header>
+
+      <div class="content">
+        <div class="bannerText" id="slideshowText">
+          <div class="active">
+            <h2>
+              Mixed <br />
+              Fruit Bliss
+              <span id="showButton"
+                ><i class="fa-solid fa-chevron-down arrow-down"></i>
+              </span>
+            </h2>
+            <p>
+              Dive into a delightful mix of succulent mango, sweet strawberries,
+              and plump blackberries with basil leaves. all arranged on a clean
+              white plate, a burst of fruity goodness.
+            </p>
+            <a href="#">Launch Video</a>
+          </div>
+          <div>
+            <h2>
+              Refreshing Mango <br />
+              Delight <span><i class="fa-solid fa-chevron-down"></i></span>
+            </h2>
+            <p>
+              Enjoy mango juice with a touch of coriander, paired with berries
+              and a tasty bun sandwich, all on a white plate for a delightful
+              treat.
+            </p>
+            <a href="#">Launch Video</a>
+          </div>
+          <div>
+            <h2>
+              Fresh Veggie<br />
+              Crunch
+              <span><i class="fa-solid fa-chevron-down"></i></span>
+            </h2>
+            <p>
+              Crisp salad featuring carrots, cucumbers, lemon, beetroot, and
+              cabbage,beautifully presented on a simple white plate, a
+              refreshing and wholesome bite.
+            </p>
+            <a href="#">Launch Video</a>
+          </div>
+          <div>
+            <h2>
+              Wholesome Samosa<br />
+              Feast
+              <span><i class="fa-solid fa-chevron-down"></i></span>
+            </h2>
+            <p>
+              Healthy samosas paired with lemon slices, raw chili, and brown
+              chutney, a tempting treat on a plate, bursting with flavors.
+            </p>
+            <a href="#">Launch Video</a>
+          </div>
+          <div>
+            <h2>
+              Berrylicious <br />
+              Fruit Wrap <span><i class="fa-solid fa-chevron-down"></i></span>
+            </h2>
+            <p>
+              Delight in a plate adorned with blackberries, strawberries, kiwi,
+              complemented by a tantalizing wrap. a colorful and tasty ensemble
+              on a crisp white canvas.
+            </p>
+            <a href="#">Launch Video</a>
+          </div>
+        </div>
+        <div class="bannerImg" id="slideshow">
+          <img src="images/img3.png" class="active" alt="img1" />
+          <img src="images/img10.png" alt="img2" />
+          <img src="images/img5.png" alt="img3" />
+          <img src="images/img11.png" alt="img4" />
+          <img src="images/img8.png" alt="img5" />
+        </div>
+      </div>
+
+      <div class="icons">
+        <ul class="sci">
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+          </li>
+        </ul>
+
+        <ul class="controls">
+          <li>
+            <a id="left-arrow"
+              ><i
+                class="fa-solid fa-circle-chevron-left fa-3x"
+                onclick="prevSlide();"
+              ></i
+            ></a>
+          </li>
+          <li>
+            <a id="right-arrow"
+              ><i
+                class="fa-solid fa-circle-chevron-right fa-3x"
+                onclick="nextSlide();"
+              ></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
