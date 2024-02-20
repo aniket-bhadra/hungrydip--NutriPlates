@@ -191,6 +191,7 @@ header ul li a.active::before{
     justify-content: space-between;
     align-items: center;
     padding: 22px 0; 
+    /* border: 3px solid red; */
     /* creating an problem in layout */
 }
 
@@ -204,17 +205,15 @@ header ul li a.active::before{
 }
 
 
-
-/* d*/
-.icons .controls{
-    right:16.6%;
+.controls li{
+    border: 1.8px solid rgba(120, 255, 0, 0.8);
+    border-radius: 50%;
 }
 
-/* d*/
 #left-arrow{
-    color: #333;
+    color: #ffffff;
 }
-/* d*/
+
 #right-arrow{
     color: #ffffff;
 }
@@ -351,11 +350,17 @@ header ul li a.active::before{
         z-index: 1000000000;
     }
 
+    .controls li{
+        border: 1.98px solid rgba(120, 255, 0, 0.8);
+    }
 
     #right-arrow{
         color: #333;
     }
 
+    #left-arrow{
+        color: #333;
+    }
     .bar-sign,.x-mark{
         display: none;
     }
@@ -453,6 +458,10 @@ header ul li a.active::before{
     header .logo span{
         color: gray;
     }
+    .container::after{
+        font-size: 24vw;
+        /* bottom: 1%; */
+    }
 }
 
 @media(max-width:480px){
@@ -544,5 +553,11 @@ header ul li a.active::before{
     }
     #right-arrow{
         font-size: 12px;
+    }
+}
+
+@media (max-width:480px){
+    .container::after{
+        bottom: 0%;
     }
 }
